@@ -14,8 +14,6 @@ public class Network {
     private static final int CONECT_TIMEOUT = 2000;
     private static final int READ_CONNECT = 2000;
     private static final String REQUEST_METHOD = "GET";
-
-
     public static String getAdressByCep(String cep){
 
         String result = null;
