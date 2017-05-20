@@ -3,9 +3,15 @@ package com.danilodorgam.consumowebservice;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.widget.TextView;
+
+import com.danilodorgam.consumowebservice.fragment.ConsultaCEPFragment;
+import com.danilodorgam.consumowebservice.webservice.ConsultarCep;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -36,10 +42,26 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        mTextMessage = (TextView) findViewById(R.id.message);
+        mTextMessage = (TextView) findViewById(R.id.textView);
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+
+        ConsultarCep consultarCep = new ConsultarCep(this);
+        consultarCep.execute("http://viacep.com.br/ws/72450130/json");
+        mTextMessage.setText(consultarCep.toString());
+
+        //
+        //carregaFragment(new ConsultaCEPFragment());
+
+    }
+    private void carregaFragment(Fragment fragment){
+        FragmentManager fm = getSupportFragmentManager();
+        if(fm != null){
+            FragmentTransaction fragmentTransaction = fm.beginTransaction();
+            fragmentTransaction.replace(R.id.content,fragment);
+            fragmentTransaction.commit();
+        }
+
     }
 
 }
