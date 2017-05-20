@@ -11,6 +11,7 @@ import android.view.MenuItem;
 import android.widget.TextView;
 
 import com.danilodorgam.consumowebservice.fragment.ConsultaCEPFragment;
+import com.danilodorgam.consumowebservice.interfaces.RetornoWbInterface;
 import com.danilodorgam.consumowebservice.webservice.ConsultarCep;
 
 public class MainActivity extends AppCompatActivity {
@@ -42,16 +43,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        mTextMessage = (TextView) findViewById(R.id.textView);
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
-        ConsultarCep consultarCep = new ConsultarCep(this);
-        consultarCep.execute("http://viacep.com.br/ws/72450130/json");
-        mTextMessage.setText(consultarCep.toString());
 
         //
-        //carregaFragment(new ConsultaCEPFragment());
+        carregaFragment(new ConsultaCEPFragment());
 
     }
     private void carregaFragment(Fragment fragment){
@@ -63,5 +60,4 @@ public class MainActivity extends AppCompatActivity {
         }
 
     }
-
 }

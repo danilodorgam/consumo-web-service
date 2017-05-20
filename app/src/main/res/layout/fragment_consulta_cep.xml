@@ -32,5 +32,10 @@
             android:background="@android:color/holo_blue_bright"
             android:text="@string/consultaButton" />
 
+        <TextView
+            android:id="@+id/resultado"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
     </LinearLayout>
 </FrameLayout>
