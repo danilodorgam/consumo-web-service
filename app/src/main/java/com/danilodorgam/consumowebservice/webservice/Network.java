@@ -45,7 +45,7 @@ public class Network {
             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
             while ((row = bufferedReader.readLine()) != null) {
                 stringBuilder.append(row);
-            }
+        }
 
         }catch(Exception e){
 

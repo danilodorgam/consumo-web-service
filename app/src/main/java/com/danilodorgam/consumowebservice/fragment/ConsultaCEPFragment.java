@@ -9,17 +9,28 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.danilodorgam.consumowebservice.R;
 import com.danilodorgam.consumowebservice.interfaces.RetornoWbInterface;
+import com.danilodorgam.consumowebservice.model.Cep;
 import com.danilodorgam.consumowebservice.webservice.ConsultarCep;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 public class ConsultaCEPFragment extends Fragment implements RetornoWbInterface, View.OnClickListener {
 
     private Button submitButton;
     private EditText cepText;
-    private TextView resultadoText;
+    private RelativeLayout resultadoLayout;
+    private TextView cepViewContent;
+    private  TextView logradouroViewContent;
+    private TextView bairroViewContent;
+    private TextView localidadeViewContent;
+    private TextView ufViewContent;
+    private TextView ibgeViewContent;
 
 
     @Override
@@ -27,9 +38,8 @@ public class ConsultaCEPFragment extends Fragment implements RetornoWbInterface,
                              Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.fragment_consulta_cep, container, false);
-
+        initResultado(view);
         cepText = (EditText) view.findViewById(R.id.cepText);
-        resultadoText = (TextView) view.findViewById(R.id.resultado);
         submitButton = (Button) view.findViewById(R.id.consultaButton);
         submitButton.setOnClickListener(this);
 
@@ -39,8 +49,31 @@ public class ConsultaCEPFragment extends Fragment implements RetornoWbInterface,
     }
 
     @Override
-    public void retornoByText(String string) {
-        resultadoText.setText(string);
+    public void retornoByCep(Cep cep) {
+       if(cep!= null){
+           resultadoLayout.setVisibility(View.VISIBLE);
+           cepViewContent.setText(cep.getCep());
+           logradouroViewContent.setText(cep.getLogradouro());
+           bairroViewContent.setText(cep.getBairro());
+           localidadeViewContent.setText(cep.getLocalidade());
+           ufViewContent.setText(cep.getUf());
+           ibgeViewContent.setText(cep.getIbge());
+       }else {
+           resultadoLayout.setVisibility(View.INVISIBLE7);
+       }
+        //resultadoText.setText(cep.getBairro());
+
+    }
+
+    private void initResultado(View view){
+        resultadoLayout = (RelativeLayout) view.findViewById(R.id.relaviveLayoutResult);
+        cepViewContent=  (TextView) view.findViewById(R.id.cepViewContent);
+        logradouroViewContent = (TextView) view.findViewById(R.id.logradouroViewContent);
+        bairroViewContent = (TextView) view.findViewById(R.id.bairroViewContent);
+        localidadeViewContent = (TextView) view.findViewById(R.id.localidadeViewContent);
+        ufViewContent = (TextView) view.findViewById(R.id.ufViewContent);
+        ibgeViewContent = (TextView) view.findViewById(R.id.ibgeViewContent);
+
     }
 
     @Override

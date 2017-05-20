@@ -8,4 +8,10 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="label_titulo_cep">Informe seu CEP</string>
     <string name="consultaButton">Consultar</string>
+    <string name="cepView">CEP:</string>
+    <string name="logradouroView">Logradouro:</string>
+    <string name="bairroView">Bairro:</string>
+    <string name="localidadeView">Localidade:</string>
+    <string name="ufView">Uf:</string>
+    <string name="ibgeView">Ibge:</string>
 </resources>

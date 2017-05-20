@@ -32,10 +32,121 @@
             android:background="@android:color/holo_blue_bright"
             android:text="@string/consultaButton" />
 
-        <TextView
-            android:id="@+id/resultado"
+        <RelativeLayout
+            android:id="@+id/relaviveLayoutResult"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="match_parent"
+            android:visibility="invisible">
+
+            <TextView
+                android:id="@+id/cepView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginEnd="49dp"
+                android:layout_marginTop="29dp"
+                android:layout_toStartOf="@+id/logradouroViewContent"
+                android:text="@string/cepView" />
+
+            <TextView
+                android:id="@+id/cepViewContent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/cepView"
+                android:layout_alignTop="@+id/cepView"
+                android:layout_centerHorizontal="true"
+                android:text="TextView" />
+
+            <TextView
+                android:id="@+id/logradouroView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/cepView"
+                android:layout_below="@+id/cepView"
+                android:layout_marginTop="19dp"
+                android:text="@string/logradouroView" />
+
+            <TextView
+                android:id="@+id/logradouroViewContent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/logradouroView"
+                android:layout_alignBottom="@+id/logradouroView"
+                android:layout_alignStart="@+id/cepViewContent"
+                android:layout_marginStart="29dp"
+                android:text="TextView" />
+
+            <TextView
+                android:id="@+id/bairroView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/localidadeView"
+                android:layout_below="@+id/logradouroView"
+                android:layout_marginTop="13dp"
+                android:text="@string/bairroView" />
+
+            <TextView
+                android:id="@+id/bairroViewContent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/bairroView"
+                android:layout_alignBottom="@+id/bairroView"
+                android:layout_alignStart="@+id/logradouroViewContent"
+                android:text="TextView" />
+
+            <TextView
+                android:id="@+id/localidadeView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/logradouroView"
+                android:layout_below="@+id/bairroViewContent"
+                android:layout_marginTop="12dp"
+                android:text="@string/localidadeView" />
+
+            <TextView
+                android:id="@+id/localidadeViewContent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/localidadeView"
+                android:layout_alignEnd="@+id/bairroViewContent"
+                android:text="TextView" />
+
+            <TextView
+                android:id="@+id/ufView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/localidadeView"
+                android:layout_below="@+id/localidadeView"
+                android:layout_marginTop="17dp"
+                android:text="@string/ufView" />
+
+            <TextView
+                android:id="@+id/ufViewContent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/ufView"
+                android:layout_alignBottom="@+id/ufView"
+                android:layout_alignStart="@+id/localidadeViewContent"
+                android:text="TextView" />
+
+            <TextView
+                android:id="@+id/ibgeView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/ufView"
+                android:layout_below="@+id/ufView"
+                android:layout_marginTop="20dp"
+                android:text="@string/ibgeView" />
+
+            <TextView
+                android:id="@+id/ibgeViewContent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/ibgeView"
+                android:layout_alignBottom="@+id/ibgeView"
+                android:layout_alignStart="@+id/ufViewContent"
+                android:text="TextView" />
+        </RelativeLayout>
 
     </LinearLayout>
 </FrameLayout>
