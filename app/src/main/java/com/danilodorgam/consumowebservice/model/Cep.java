@@ -5,6 +5,7 @@ package com.danilodorgam.consumowebservice.model;
  */
 
 public class Cep {
+    private Integer id;
     private String cep;
     private String logradouro;
     private String complemento;
@@ -98,5 +99,13 @@ public class Cep {
 
     public void setGia(String gia) {
         this.gia = gia;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 }

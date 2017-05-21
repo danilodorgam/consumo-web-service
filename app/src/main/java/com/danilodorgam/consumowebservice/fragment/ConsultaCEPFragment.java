@@ -11,8 +11,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.danilodorgam.consumowebservice.R;
+import com.danilodorgam.consumowebservice.dao.CepDao;
 import com.danilodorgam.consumowebservice.interfaces.RetornoWbInterface;
 import com.danilodorgam.consumowebservice.model.Cep;
 import com.danilodorgam.consumowebservice.webservice.ConsultarCep;
@@ -58,10 +60,16 @@ public class ConsultaCEPFragment extends Fragment implements RetornoWbInterface,
            localidadeViewContent.setText(cep.getLocalidade());
            ufViewContent.setText(cep.getUf());
            ibgeViewContent.setText(cep.getIbge());
+
+           //insere no banco
+           CepDao cepDao = new CepDao(getActivity());
+           if(cepDao.insertCep(cep))
+               Toast.makeText(getActivity(),"Endereço Salvo com Sucesso",Toast.LENGTH_LONG).show();
+           else
+               Toast.makeText(getActivity(),"tivemos aglum problema",Toast.LENGTH_LONG).show();
        }else {
-           resultadoLayout.setVisibility(View.INVISIBLE7);
+           resultadoLayout.setVisibility(View.INVISIBLE);
        }
-        //resultadoText.setText(cep.getBairro());
 
     }
 
