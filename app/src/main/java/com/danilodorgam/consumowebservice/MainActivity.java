@@ -11,6 +11,7 @@ import android.view.MenuItem;
 import android.widget.TextView;
 
 import com.danilodorgam.consumowebservice.fragment.ConsultaCEPFragment;
+import com.danilodorgam.consumowebservice.fragment.ListaCepsFragment;
 import com.danilodorgam.consumowebservice.interfaces.RetornoWbInterface;
 import com.danilodorgam.consumowebservice.webservice.ConsultarCep;
 
@@ -25,10 +26,10 @@ public class MainActivity extends AppCompatActivity {
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             switch (item.getItemId()) {
                 case R.id.navigation_home:
-                    mTextMessage.setText(R.string.title_home);
+                    carregaFragment(new ConsultaCEPFragment());
                     return true;
                 case R.id.navigation_dashboard:
-                    mTextMessage.setText(R.string.title_dashboard);
+                    carregaFragment(new ListaCepsFragment());
                     return true;
                 case R.id.navigation_notifications:
                     mTextMessage.setText(R.string.title_notifications);
