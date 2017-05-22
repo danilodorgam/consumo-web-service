@@ -28,7 +28,7 @@
             android:layout_height="match_parent"
             android:background="#4c424242" />
 
-        <TextView
+        <com.danilodorgam.consumowebservice.font.RobotoTextView
             android:id="@+id/cepViewContent"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -39,12 +39,13 @@
             android:gravity="center"
             android:minHeight="36dp"
             android:minWidth="64dp"
-            android:text="72450-130"
+            android:text="BUY"
             android:textColor="@android:color/white"
-            android:textSize="14sp"
-            />
 
-        <TextView
+            android:textSize="14sp"
+            app:typeface="robotoMedium" />
+
+        <com.danilodorgam.consumowebservice.font.RobotoTextView
             android:id="@+id/bairroViewContent"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -56,10 +57,10 @@
             android:maxWidth="180dp"
             android:layout_weight="1"
             android:maxLines="2"
-            android:text="Setor Leste(Gama)"
+            android:text="Product1"
             android:textColor="@android:color/white"
             android:textSize="28sp"
-            />
+            app:typeface="robotoLight" />
 
     </RelativeLayout>
 

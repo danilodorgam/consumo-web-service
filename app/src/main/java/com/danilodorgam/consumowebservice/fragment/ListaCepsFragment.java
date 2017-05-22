@@ -75,7 +75,7 @@ public class ListaCepsFragment extends Fragment implements RecyclerViewOnClickLi
 
     @Override
     public void onClickListen(View view, int position) {
-        Toast.makeText(getActivity(),"Posicao"+position,Toast.LENGTH_LONG).show();
+       // Toast.makeText(getActivity(),"Posicao"+position,Toast.LENGTH_LONG).show();
         Intent intent = new Intent(getActivity(), DetalhesCepActivity.class);
         startActivity(intent);
 
