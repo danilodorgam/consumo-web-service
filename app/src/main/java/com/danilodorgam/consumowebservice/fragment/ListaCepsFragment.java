@@ -1,6 +1,7 @@
 package com.danilodorgam.consumowebservice.fragment;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -12,6 +13,7 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 
+import com.danilodorgam.consumowebservice.DetalhesCepActivity;
 import com.danilodorgam.consumowebservice.R;
 import com.danilodorgam.consumowebservice.adapter.ListaCepsAdapter;
 import com.danilodorgam.consumowebservice.dao.CepDao;
@@ -67,12 +69,15 @@ public class ListaCepsFragment extends Fragment implements RecyclerViewOnClickLi
 
         listaCepsAdapter.setRecyclerViewOnClickListenHack(this);
         mRecyclerView.setAdapter(listaCepsAdapter);
+
         return view;
     }
 
     @Override
     public void onClickListen(View view, int position) {
         Toast.makeText(getActivity(),"Posicao"+position,Toast.LENGTH_LONG).show();
+        Intent intent = new Intent(getActivity(), DetalhesCepActivity.class);
+        startActivity(intent);
 
     }
 }
