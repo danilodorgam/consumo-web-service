@@ -64,10 +64,10 @@ public class CepDao {
         resultado = mSQLiteDatabase.insert(TB_NAME,null,mContentValues);
         mSQLiteDatabase.close();
         if(resultado == -1){
-            return  true;
+            return  false;
         }
 
-        return  false;
+        return  true;
     }
 
     public List<Cep> getCeps(int paginacao){

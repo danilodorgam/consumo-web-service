@@ -6,6 +6,16 @@ import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.view.MenuItem;
+
+import com.danilodorgam.consumowebservice.fragment.ConsultaCEPFragment;
+import com.danilodorgam.consumowebservice.fragment.ListaCepsFragment;
+import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.design.widget.BottomNavigationView;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.widget.TextView;
@@ -14,9 +24,11 @@ import com.danilodorgam.consumowebservice.fragment.ConsultaCEPFragment;
 import com.danilodorgam.consumowebservice.fragment.ListaCepsFragment;
 import com.danilodorgam.consumowebservice.interfaces.RetornoWbInterface;
 import com.danilodorgam.consumowebservice.webservice.ConsultarCep;
+/**
+ * Created by danil on 22/05/2017.
+ */
 
-public class MainActivity extends AppCompatActivity {
-
+public class DetalhesCepActivity  extends AppCompatActivity  {
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
 

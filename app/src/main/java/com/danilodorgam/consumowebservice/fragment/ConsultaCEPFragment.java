@@ -63,10 +63,11 @@ public class ConsultaCEPFragment extends Fragment implements RetornoWbInterface,
 
            //insere no banco
            CepDao cepDao = new CepDao(getActivity());
-           if(cepDao.insertCep(cep))
-               Toast.makeText(getActivity(),"Endereço Salvo com Sucesso",Toast.LENGTH_LONG).show();
-           else
-               Toast.makeText(getActivity(),"tivemos aglum problema",Toast.LENGTH_LONG).show();
+           if(cepDao.insertCep(cep)) {
+               Toast.makeText(getActivity(), "Endereço Salvo com Sucesso", Toast.LENGTH_LONG).show();
+           }else {
+               Toast.makeText(getActivity(), "tivemos aglum problema", Toast.LENGTH_LONG).show();
+           }
        }else {
            resultadoLayout.setVisibility(View.INVISIBLE);
        }

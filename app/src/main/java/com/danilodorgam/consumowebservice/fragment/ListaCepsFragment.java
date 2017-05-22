@@ -9,16 +9,18 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 
 import com.danilodorgam.consumowebservice.R;
 import com.danilodorgam.consumowebservice.adapter.ListaCepsAdapter;
 import com.danilodorgam.consumowebservice.dao.CepDao;
+import com.danilodorgam.consumowebservice.interfaces.RecyclerViewOnClickListenHack;
 import com.danilodorgam.consumowebservice.model.Cep;
 
 import java.util.List;
 
-public class ListaCepsFragment extends Fragment {
+public class ListaCepsFragment extends Fragment implements RecyclerViewOnClickListenHack {
     private RecyclerView mRecyclerView;
     private List<Cep> mList;
     private CepDao mCepDao;
@@ -62,8 +64,15 @@ public class ListaCepsFragment extends Fragment {
         mCepDao = new CepDao(getActivity());
         mList = mCepDao.getCeps(0);
         ListaCepsAdapter listaCepsAdapter = new ListaCepsAdapter(getActivity(),mList);
+
+        listaCepsAdapter.setRecyclerViewOnClickListenHack(this);
         mRecyclerView.setAdapter(listaCepsAdapter);
         return view;
     }
 
+    @Override
+    public void onClickListen(View view, int position) {
+        Toast.makeText(getActivity(),"Posicao"+position,Toast.LENGTH_LONG).show();
+
+    }
 }
