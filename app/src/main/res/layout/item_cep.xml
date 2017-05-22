@@ -41,7 +41,7 @@
             android:minWidth="64dp"
             android:text="BUY"
             android:textColor="@android:color/white"
-
+            android:background="@drawable/selector_expandable_shop"
             android:textSize="14sp"
             app:typeface="robotoMedium" />
 

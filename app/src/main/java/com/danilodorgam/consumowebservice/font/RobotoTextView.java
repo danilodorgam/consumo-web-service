@@ -1,15 +1,13 @@
 package com.danilodorgam.consumowebservice.font;
 
-/**
- * Created by danil on 22/04/2017.
- */
+
 
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Typeface;
 import android.util.AttributeSet;
 
-import br.com.dorgamnetwork.concurso.R;
+import com.danilodorgam.consumowebservice.R;
 
 public class RobotoTextView extends android.support.v7.widget.AppCompatTextView {
 
